@@ -128,10 +128,10 @@ def delete_note():
 # Добавляем кнопки в главное окно
 new_button = ttk.Button(root, text="New Note", 
                         command=add_note, style="info.TButton")
-new_button.pack(side=tk.LEFT, padx=10, pady=10)
+new_button.pack(side=tk.LEFT, padx=20, pady=20)
 
 delete_button = ttk.Button(root, text="Delete", 
                            command=delete_note, style="primary.TButton")
-delete_button.pack(side=tk.LEFT, padx=10, pady=10)
+delete_button.pack(side=tk.LEFT, padx=20, pady=20)
 
 root.mainloop()
