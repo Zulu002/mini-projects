@@ -1,18 +1,24 @@
-def draw_diamond(size):
-    # Верхняя часть ромба
-    for i in range(size):
-        # Печать пробелов
-        print(' ' * (size - i - 1), end='')
-        # Печать звездочек
-        print('*' * (2 * i + 1))
-    
-    # Нижняя часть ромба
-    for i in range(size - 2, -1, -1):
-        # Печать пробелов
-        print(' ' * (size - i - 1), end='')
-        # Печать звездочек
-        print('*' * (2 * i + 1))
+def draw_sun():
+    # Определяем размеры и параметры солнца
+    sun_radius = 10
+    center_x = 10
+    center_y = 10
 
-# Задаем размер ромба
-size = 5
-draw_diamond(size)
+    # Определяем высоту и ширину выводимого изображения
+    height = 20
+    width = 20
+
+    # Создаем пустое поле для "неба"
+    sky = [[' ' for _ in range(width)] for _ in range(height)]
+
+    # Рисуем солнце
+    for y in range(height):
+        for x in range(width):
+            if (x - center_x) ** 2 + (y - center_y) ** 2 <= sun_radius ** 2:
+                sky[y][x] = '*'
+
+    # Выводим на экран
+    for row in sky:
+        print(''.join(row))
+
+draw_sun()
